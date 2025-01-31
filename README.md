@@ -17,3 +17,25 @@ The default setting is 44.1khz - 128 Mel bin. if you want to change it to 24khz,
 Huge Thanks to [Johnathan Duering](https://github.com/duerig) for his help. I mostly implemented this based on his [STTS2 Fork](https://github.com/duerig/StyleTTS2/tree/main).
 
 **This is highly experimental, I have not conducted a full session training. I just tested that the loss goes down and the eval samples sound reasonable for ~10K steps of minimal training.**
+
+
+## Pre-requisites
+1. Python >= 3.10
+2. Clone this repository:
+```bash
+git clone https://github.com/Respaired/HiFormer_Vocoder
+cd HiFormer_Vocoder/Ringformer
+```
+3. Install python requirements: 
+```bash
+pip install -r requirements.txt
+```
+
+## Training
+```bash
+CUDA_VISIBLE_DEVICES=0,1 accelerate launch train.py --config config_v1.json --[args]
+```
+For the F0 model training, please refer to [yl4579/PitchExtractor](https://github.com/yl4579/PitchExtractor). This repo includes a pre-trained F0 model on a Mixture of Multilingual data for the previously mentioned configuration. I'm going to quote the HiFTnet's Author: "Still, you may want to train your own F0 model for the best performance, particularly for noisy or non-speech data, as we found that F0 estimation accuracy is essential for the vocoder performance." 
+
+## Inference
+Please refer to the notebook [inference.ipynb](https://github.com/Respaired/HiFormer_Vocoder/blob/main/RingFormer/inference.ipynb) for details.
