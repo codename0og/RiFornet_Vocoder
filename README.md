@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ## Training
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 accelerate launch train.py --config config_v1.json --[args]
+CUDA_VISIBLE_DEVICES=0 python train_single_gpu.py --config config_v1.json --[args]
 ```
 For the F0 model training, please refer to [yl4579/PitchExtractor](https://github.com/yl4579/PitchExtractor). This repo includes a pre-trained F0 model on a Mixture of Multilingual data for the previously mentioned configuration. I'm going to quote the HiFTnet's Author: "Still, you may want to train your own F0 model for the best performance, particularly for noisy or non-speech data, as we found that F0 estimation accuracy is essential for the vocoder performance." 
 
