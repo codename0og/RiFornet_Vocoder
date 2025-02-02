@@ -11,6 +11,8 @@ tags:
 
 [HuggingFace 🤗 - Repository](https://huggingface.co/Respair/HiFormer_Vocoder)
 
+**DDP is untested, please use the single-gpu training script**
+
 This Vocoder, is a combination of [HiFTnet](https://github.com/yl4579/HiFTNet) and [Ringformer](https://github.com/seongho608/RingFormer). it supports Ring Attention, Conformer and Neural Source Filtering etc.
 This repository is experimental, expect some bugs and some hardcoded params.
 
