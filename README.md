@@ -9,7 +9,7 @@ tags:
 
 # Model Card for Model ID
 
-[HuggingFace 🤗 - Repository](https://huggingface.co/Respair/HiFormer_Vocoder)
+[HuggingFace 🤗 - Repository](https://huggingface.co/Respair/HiFormer_Vocoder) (Please Check HuggingFace, I often update there + the checkpoints I train)
 
 **DDP is very un-stable, please use the single-gpu training script** - if you still want to do it, I suggest uncommenting the grad clipping lines; that should help a lot.
 
