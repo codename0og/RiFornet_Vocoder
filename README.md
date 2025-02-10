@@ -26,7 +26,7 @@ Huge Thanks to [Johnathan Duering](https://github.com/duerig) for his help. I mo
 There are Three checkpoints available so far where you can grab them from 🤗:
   - HiFormer 24khz (trained for roughly 117K~ steps on LibriTTS (360 + 100) and 40 hours of other English datasets.)
   - HiFormer 44.1khz (trained for roughly 280K~ steps on a Large (more than 1100 hours) private Multilingual dataset, covering Arabic, Persian, Japanese, English, Russian and also Singing voice in Chinese and Japanese with Quranic recitations in Arabic. **This is the best checkpoint available so far.**
-  - HiFTNet 44.1khz (trained for ~100K steps, on a similar dataset to HiFormer 44.1khz, but slightly smaller and no singing voice.) to use this Checkpoint you should head to the [HiFTNet's repository](https://github.com/yl4579/HiFTNet). make sure your mel-preprocessing matches that of [StyleTTS](https://github.com/yl4579/StyleTTS/blob/main/meldataset.py#L60-L68).
+  - HiFTNet 44.1khz (trained for ~100K steps, on a similar dataset to HiFormer 44.1khz, but slightly smaller and no singing voice.)
 
 Ideally I wanted to train them all up to 1M steps, but I don't think I can do that for a while. so, while the quality should be reasonably good, you may still want to fine-tune them on your downstream task.
 
