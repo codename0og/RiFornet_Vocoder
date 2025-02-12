@@ -7,9 +7,11 @@ tags:
 - tts
 ---
 
+Changing the name because I found another unrelated model that has the same name, sorry!
+
 # Model Card for Model ID
 
-[HuggingFace 🤗 - Repository](https://huggingface.co/Respair/HiFormer_Vocoder) (Please Check HuggingFace, I often update there + the checkpoints I train)
+[HuggingFace 🤗 - Repository](https://huggingface.co/Respair/RiFornet_Vocoder) (Please Check HuggingFace, I often update there + the checkpoints I train)
 
 **DDP is very un-stable, please use the single-gpu training script** - if you still want to do it, I suggest uncommenting the grad clipping lines; that should help a lot.
 
@@ -24,9 +26,9 @@ Huge Thanks to [Johnathan Duering](https://github.com/duerig) for his help. I mo
 **NOTE**: 
 
 There are Three checkpoints available so far where you can grab them from 🤗:
-  - HiFormer 24khz (trained for roughly 117K~ steps on LibriTTS (360 + 100) and 40 hours of other English datasets.)
-  - HiFormer 44.1khz (trained for roughly 280K~ steps on a Large (more than 1100 hours) private Multilingual dataset, covering Arabic, Persian, Japanese, English, Russian and also Singing voice in Chinese and Japanese with Quranic recitations in Arabic. **This is the best checkpoint available so far.**
-  - HiFTNet 44.1khz (trained for ~100K steps, on a similar dataset to HiFormer 44.1khz, but slightly smaller and no singing voice.)
+  - RiFornet 24khz (trained for roughly 117K~ steps on LibriTTS (360 + 100) and 40 hours of other English datasets.)
+  - RiFornet 44.1khz (trained for roughly 280K~ steps on a Large (more than 1100 hours) private Multilingual dataset, covering Arabic, Persian, Japanese, English, Russian and also Singing voice in Chinese and Japanese with Quranic recitations in Arabic. **This is the best checkpoint available so far.**
+  - HiFTNet 44.1khz (trained for ~100K steps, on a similar dataset to RiFornet 44.1khz, but slightly smaller and no singing voice.)
 
 Ideally I wanted to train them all up to 1M steps, but I don't think I can do that for a while. so, while the quality should be reasonably good, you may still want to fine-tune them on your downstream task.
 
@@ -34,8 +36,8 @@ Ideally I wanted to train them all up to 1M steps, but I don't think I can do th
 1. Python >= 3.10
 2. Clone this repository:
 ```bash
-git clone https://github.com/Respaired/HiFormer_Vocoder
-cd HiFormer_Vocoder/Ringformer
+git clone https://github.com/Respaired/RiFornet_Vocoder
+cd RiFornet_Vocoder/Ringformer
 ```
 3. Install python requirements: 
 ```bash
@@ -49,7 +51,7 @@ CUDA_VISIBLE_DEVICES=0 python train_single_gpu.py --config config_v1.json --[arg
 For the F0 model training, please refer to [yl4579/PitchExtractor](https://github.com/yl4579/PitchExtractor). This repo includes a pre-trained F0 model on a Mixture of Multilingual data for the previously mentioned configuration. I'm going to quote the HiFTnet's Author: "Still, you may want to train your own F0 model for the best performance, particularly for noisy or non-speech data, as we found that F0 estimation accuracy is essential for the vocoder performance." 
 
 ## Inference
-Please refer to the notebook [inference.ipynb](https://github.com/Respaired/HiFormer_Vocoder/blob/main/RingFormer/inference.ipynb) for details.
+Please refer to the notebook [inference.ipynb](https://github.com/Respaired/RiFornet_Vocoder/blob/main/RingFormer/inference.ipynb) for details.
 ## Training
 ```bash
 CUDA_VISIBLE_DEVICES=0 python train_single_gpu.py --config config_v1.json --[args]
@@ -57,4 +59,4 @@ CUDA_VISIBLE_DEVICES=0 python train_single_gpu.py --config config_v1.json --[arg
 For the F0 model training, please refer to [yl4579/PitchExtractor](https://github.com/yl4579/PitchExtractor). This repo includes a pre-trained F0 model on a Mixture of Multilingual data for the previously mentioned configuration. I'm going to quote the HiFTnet's Author: "Still, you may want to train your own F0 model for the best performance, particularly for noisy or non-speech data, as we found that F0 estimation accuracy is essential for the vocoder performance." 
 
 ## Inference
-Please refer to the notebook [inference.ipynb](https://github.com/Respaired/HiFormer_Vocoder/blob/main/RingFormer/inference.ipynb) for details.
+Please refer to the notebook [inference.ipynb](https://github.com/Respaired/RiFornet_Vocoder/blob/main/RingFormer/inference.ipynb) for details.
