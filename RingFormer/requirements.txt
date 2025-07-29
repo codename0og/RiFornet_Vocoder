@@ -6,5 +6,13 @@ tensorboard==2.0
 soundfile
 matplotlib==3.1.3
 nnaudio
-ring-attention-pytorch
---extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/Triton-Nightly/pypi/simple/triton-nightly
+
+# Modified to work with triton-windows 3.3.1.post19 (cp310-win_amd64) + unlocked '64' autotune config ( rtx 3060 friendly. ) 
+ring-attention-pytorch @ https://github.com/codename0og/codename-essentials/raw/refs/heads/main/ring_attention_pytorch-0.5.17-py3-none-any.whl ; sys_platform == "win32"
+
+# Triton for Windows
+triton @ https://github.com/codename0og/codename-essentials/raw/refs/heads/main/triton_windows-3.3.1.post19-cp310-cp310-win_amd64.whl ; sys_platform == "win32"
+
+# Triton for Linux
+--extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/Triton-Nightly/pypi/simple/
+triton-nightly ; sys_platform == "linux"
